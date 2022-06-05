@@ -11,6 +11,12 @@
 
 ---
 
+-- Repository GitHub associé à mon TP : 
+https://github.com/ArthurA14/docker-devops-td1
+-- Image sur DockerHub associé à mon TP : https://hub.docker.com/r/antoinearthur/docker-devops-td1-test2
+
+---
+
 ### Solutions techniques employées : 
 Pour réaliser ce travail, j'ai utilisé le langage de programmation ***Python***. Dans un deuxième temps, lorsqu'il s'agira de requêter une API, j'utiliserai en plus de Python le micro framework dédié ***Flask***.
 L'OS que j'utilise est ***Windows 10***, avec le CLI ***WSL2***, de manière à bénéficier de certaines commandes Unix.
