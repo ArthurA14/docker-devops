@@ -13,7 +13,8 @@
 
 -- Repository GitHub associé à mon TP : 
 https://github.com/ArthurA14/docker-devops-td1
--- Image sur DockerHub associé à mon TP : https://hub.docker.com/r/antoinearthur/docker-devops-td1-test2
+-- Image sur DockerHub associé à mon TP : 
+https://hub.docker.com/r/antoinearthur/docker-devops-td1-test2
 
 ---
 
@@ -34,7 +35,7 @@ $ mkdir docker-devops-td1
 $ cd docker-devops-td1
 ````
 
-- Je crée ensuite un environnement virtuel *myvenv* au sein de ce répertoire projet; cela me permettra d'installer toutes les librairies dont j'aurai besoin ultérieurement, tout en isolant mon application d'un point de vue code. En effet, en procédédant ainsi, les versions des librairies que j'installerai dans mon environnement virtuel seront toujours disponibles au sein de cet environnement, ce qui m'assurera que mon code fonctionnera toujours correctement en son sein : 
+- *Je crée ensuite un environnement virtuel *myvenv* au sein de ce répertoire projet; cela me permettra d'installer toutes les librairies dont j'aurai besoin ultérieurement, tout en isolant mon application d'un point de vue code. En effet, en procédédant ainsi, les versions des librairies que j'installerai dans mon environnement virtuel seront toujours disponibles au sein de cet environnement, ce qui m'assurera que mon code fonctionnera toujours correctement en son sein :* 
 ````bash
 $ python3 -m venv myvenv
 ````
