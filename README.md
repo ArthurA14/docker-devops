@@ -26,7 +26,7 @@ L'OS que j'utilise est ***Windows 10***, avec le CLI ***WSL2***, de manière à 
 ### Travail réalisé étape par étape : 
 
 ### 1.  Installations préliminaires : 
-- Je commence par créer un répertoire de projet en local, que je nomme *docker-devops-td1*:
+- #### Je commence par créer un répertoire de projet en local, que je nomme *docker-devops-td1*:
 ````bash
 $ cd ../..
 $ cd Users/arthu/Efrei/DEVOPS
@@ -39,32 +39,32 @@ $ cd docker-devops-td1
 $ python3 -m venv myvenv
 ````
 
-- Activation de l'environnement virtuel *myvenv* : 
+- #### Activation de l'environnement virtuel *myvenv* : 
 ````bash
 $ source myvenv/bin/activate
 ````
--> Ce qui donne : 
+-> *Ce qui donne :* 
 ````bash
 (myvenv) toto@DESKTOP-OBTCMJQ:/mnt/c/Users/arthu/Efrei/DEVOPS/docker-devops-td1$
 ````
-A présent, je lancerai toujours de nouvelles commandes à partir de cet environnement virtuel.
+*A présent, je lancerai toujours de nouvelles commandes à partir de cet environnement virtuel.*
 
 ---
 
 ### 2 . Création de compte sur openweathermap.org
-- Je crée un compte sur openweathermap.org.
-- J'y récupère mon API KEY dans mon espace personnel.
-Pour les besoins de la démonstration, mon API KEY est : ***68e3a32*********
+- #### Je crée un compte sur openweathermap.org.
+- #### J'y récupère mon API KEY dans mon espace personnel.
+*Pour les besoins de la démonstration, mon API KEY est : ***68e3a32**********
 
 ---
 
 ### 3.  Test de la Weather API en ligne de commandes : 
-- Sous WSL2, dans *myvenv*, je tape : 
+- #### Sous WSL2, dans *myvenv*, je tape : 
 ````bash
 $ export APIKEY=68e3a32******
 ````
 
-- Test de l'API KEY à partir de la console : 
+- #### Test de l'API KEY à partir de la console : 
 ````bash
 $ curl "http://api.openweathermap.org/data/2.5/weather?q=palermo&appid=$APIKEY"
 ````
@@ -77,11 +77,11 @@ $ curl "http://api.openweathermap.org/data/2.5/weather?q=palermo&appid=$APIKEY"
 ---
 
 ### 4.  Utilisation de la Weather API avec Python : 
-- Création d'un fichier *prova_api.py* : 
+- #### Création d'un fichier *prova_api.py* : 
 ````bash
 $ touch prova_api.py
 ````
-- Ecriture du code au sein de ce fichier *prova_api.py*:
+- #### Ecriture du code au sein de ce fichier *prova_api.py*:
 ````python
 import  requests
 import  os
@@ -95,7 +95,7 @@ print(response.json())
 ````
 -> *Ce code me permet de paramétrer l'url que je requête, avec le champ "APIKEY"* . 
 
-- Compilation et exécution de mon code : 
+- #### Compilation et exécution de mon code : 
 ````bash
 $ python3 prova_api.py
 ````
@@ -112,7 +112,7 @@ $ python3 prova_api.py
 ````bash
 $ touch requirements.txt
 ````
--> J'y inscrits les dépendances nécessaires; cela aura une utilité pour les appels API ultérieurs : 
+-> *J'y inscrits les dépendances nécessaires; cela aura une utilité pour les appels API ultérieurs :* 
 ````python
 flask==2.1.2
 requests==2.22.0
@@ -127,7 +127,7 @@ python-dotenv
 ````
 
 - #### Création du fichier ***Dockerfile*** : 
--> Ce fichier me permet d'exécuter les différentes commandes, associées à différents  fichiers, dont j'ai besoin pour créer mon conteneur Docker. Dans ce fichier, j'écris donc les lignes de commandes suivantes : 
+-> *Ce fichier me permet d'exécuter les différentes commandes, associées à différents  fichiers, dont j'ai besoin pour créer mon conteneur Docker. Dans ce fichier, j'écris donc les lignes de commandes suivantes :*
 ````docker
 FROM  python:3.8-buster
 
@@ -144,7 +144,7 @@ EXPOSE  5000  # numéro du port que je vais utiliser sur mon réseau pour créer
 CMD  ["python",  "prova_api.py"]  # langage et fichier que je vais utiliser dans mon image Docker 
 ````
 
--> Pour la suite de mon travail, je devrai installer ***Docker Desktop*** et démarrer, afin de pouvoir utiliser la commande *docker* dans WSL2.
+-> *Pour la suite de mon travail, je devrai installer ***Docker Desktop*** et démarrer, afin de pouvoir utiliser la commande *docker* dans WSL2.*
 
 - #### Construction de l'image Docker : 
 ````bash
@@ -179,7 +179,7 @@ $ docker build --tag prova_api .
 ````bash
 $ docker run -p 5000:5000 --env APIKEY=$APIKEY --rm prova_api
 ````
-Ou :
+*Ou :*
 ````bash
 $ docker run -p 5000:5000 --env APIKEY=68e3a32****** --rm prova_api
 ````
@@ -233,7 +233,7 @@ $ docker run --env LAT="5.902785" --env LONG="102.754175" --env APIKEY=68e3a32**
 
 ### 6. Utilisation de Docker Hub :
 
-- #### Voir les images que nous avons en local sur notre machine : 
+- #### Voir les images que j'ai en local sur ma machine : 
 ````bash
 $ docker images
 ````
