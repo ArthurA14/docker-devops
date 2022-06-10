@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    -
+      name: Login to DockerHub
+      uses: docker/login-action@v2
+      with:
+        registry: ArthurA14/docker-devops-tp1-tp2
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
