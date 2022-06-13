@@ -345,5 +345,5 @@ $ docker run --env LAT="5.902785" --env LONG="102.754175" --env APIKEY=68e3a32**
 ````
 
 ````bash
-{'coord': {'lon': 102.7542, 'lat': 5.9028}, 'weather': [{'id': 803, 'main': 'Clouds', 'description': 'broken clouds', 'icon': '04n'}], 'base': 'stations', 'main': {'temp': 300.18, 'feels_like': 302.4, 'temp_min': 300.18, 'temp_max': 300.18, 'pressure': 1009, 'humidity': 74, 'sea_level': 1009, 'grnd_level': 982}, 'visibility': 10000, 'wind': {'speed': 3.36, 'deg': 144, 'gust': 3.63}, 'clouds': {'all': 64}, 'dt': 1654446279, 'sys': {'country': 'MY', 'sunrise': 1654469654, 'sunset': 1654514474}, 'timezone': 28800, 'id': 1736405, 'name': 'Jertih', 'cod': 200}         
+{'coord': {'lon': 102.7542, 'lat': 5.9028}, 'weather': [{'id': 803, 'main': 'Clouds', 'description': 'broken clouds', 'icon': '04n'}], 'base': 'stations', 'main': {'temp': 300.18, 'feels_like': 302.4, 'temp_min': 300.18, 'temp_max': 300.18, 'pressure': 1009, 'humidity': 74, 'sea_level': 1009, 'grnd_level': 982}, 'visibility': 10000, 'wind': {'speed': 3.36, 'deg': 144, 'gust': 3.63}, 'clouds': {'all': 64}, 'dt': 1654446279, 'sys': {'country': 'MY', 'sunrise': 1654469654, 'sunset': 1654514474}, 'timezone': 28800, 'id': 1736405, 'name': 'Jertih', 'cod': 200}     
 ````
