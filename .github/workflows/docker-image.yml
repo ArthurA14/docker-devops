@@ -23,4 +23,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ${{ secrets.USERNAME }}/docker-devops-tp1-tp2:latest
+          tags: ${{ secrets.USERNAME }}/docker-devops-tp1-tp2     :latest
