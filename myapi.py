@@ -3,21 +3,63 @@ from flask import request, jsonify
 import os
 import requests
 from datetime import datetime, timedelta
-
+import config
+from config import Config
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 app.config.from_object('config.Config')
 
-APIKEY = os.environ.get('APIKEY')
-LAT = os.environ.get('LAT') 
-LONG = os.environ.get('LONG')
+# APIKEY = os.environ.get('APIKEY')
+# LAT = os.environ.get('LAT') 
+# LONG = os.environ.get('LONG')
 
 @app.route('/', methods=['GET'])
 def home():
-    output = {}
+    html = """
+           <h1>Sunrise-sunset API</h1>
+           <p>Example RESTful API for the course Lab. of Cloud Computing, Big Data and security @ UniCatt</p>
+           """
+    return html
 
-    uri = f"https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LONG}&appid={APIKEY}"
+
+@app.route('/api/prova/<city>', methods=['GET'])
+def api_prova(city):
+    output = {}
+    if city:
+        output = {
+            'sunrise': 1,
+            'sunset': 2,
+            'city': city
+        }
+    return jsonify(output)
+
+
+@app.route('/api/daylight/<city>', methods=['GET'])
+def api_daylight(city):
+    output = {}
+    uri = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={config.Config.APIKEY}"
+    # uri = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={APIKEY}"
+    print(uri)
+    res = requests.get(uri)
+    if res.status_code == 200:
+        data = res.json()
+        sunrise = data['sys']['sunrise']
+        sunset = data['sys']['sunset']
+        output = {
+            'sunrise': sunrise,
+            'sunset': sunset,
+            'daylight': sunset-sunrise,
+            'city': city            
+        }
+    return output
+
+
+@app.route('/', methods=['GET'])
+def api_daylight2():
+    output = {}
+    uri = f"https://api.openweathermap.org/data/2.5/weather?lat={config.Config.LAT}&lon={config.Config.LONG}&appid={config.Config.APIKEY}"
+    # uri = f"https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LONG}&appid={APIKEY}"
     print(uri)
     res = requests.get(uri)
     if res.status_code == 200:
@@ -53,5 +95,5 @@ def home():
     return html
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=8081)
+    app.run(debug=True, host='0.0.0.0', port=8081)
 # app.run(host='0.0.0.0')  # accept connection from every host
