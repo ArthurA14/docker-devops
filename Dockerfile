@@ -10,7 +10,8 @@ RUN pip install -r requirements.txt
 COPY myapi.py .
 # COPY prova_api.py .
 
-EXPOSE 5000
+EXPOSE 8081
+# EXPOSE 5000
 
 CMD ["python", "myapi.py"]
 # CMD ["python", "prova_api.py"]
