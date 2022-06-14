@@ -86,7 +86,7 @@ def api_daylight2():
             <p><b> Température </b> :"""+ str(temp) +""" </p>
             <p><b> Température ressentie </b> : """+ str(feels) +""" </p>
             <p><b> Temps </b> : """+ str(meteo) +""" </p>
-            <p><b> Description du temps </b> : """+ str(descri) +""" </p>
+            <p><b> Description du temps </b> : """+ str(description) +""" </p>
             <p><b> Force du vent </b> : """+ str(wind) +""" </p>"""
             
     return html
