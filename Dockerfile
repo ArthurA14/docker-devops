@@ -1,15 +1,16 @@
 FROM python:3.8-buster
 
-WORKDIR /docker-devops-td1
+WORKDIR /docker-devops-tp2
+# WORKDIR /docker-devops-td1
 
 COPY requirements.txt .
 
 RUN pip install -r requirements.txt
 
-# COPY myapi.py .
-COPY prova_api.py .
+COPY myapi.py .
+# COPY prova_api.py .
 
 EXPOSE 5000
 
-# CMD ["python", "myapi.py"]
-CMD ["python", "prova_api.py"]
+CMD ["python", "myapi.py"]
+# CMD ["python", "prova_api.py"]
