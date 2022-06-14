@@ -87,10 +87,7 @@ def api_daylight2():
             <p><b> Température ressentie </b> : """+ str(feels) +""" </p>
             <p><b> Temps </b> : """+ str(meteo) +""" </p>
             <p><b> Description du temps </b> : """+ str(descri) +""" </p>
-            <p><b> Force du vent </b> : """+ str(wind) +""" </p>
-            <p><b> Heure du lever du soleil </b> : """+ str(sunrise) +""" </p>
-            <p><b> Heure du coucher du soleil </b> : """+ str(sunset) +""" </p>
-            <p><b> Durée de soleil </b> : """+ str(daylight) +""" </p>"""
+            <p><b> Force du vent </b> : """+ str(wind) +""" </p>"""
             
     return html
 
