@@ -8,3 +8,4 @@ class Config:
     APIKEY = os.environ.get('APIKEY')
     LAT = os.environ.get('LAT') 
     LONG = os.environ.get('LONG')
+    CITY = os.environ.get('CITY')
